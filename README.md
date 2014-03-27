@@ -1,0 +1,1 @@
+# Mag fallback logger
