@@ -1,9 +1,10 @@
 
 var util = require('util');
-var through2 = require('through2');
+var Transform = require('readable-stream/transform');
 
+var fallback = new Transform({objectMode: true});
 
-var fallback = through2.obj(function(data, encoding, cb) {
+fallback._transform = function(data, encoding, cb) {
   data.severity = data.severity || 'DEBUG';
   data.timestamp = data.timestamp || new Date();
 
@@ -26,7 +27,7 @@ var fallback = through2.obj(function(data, encoding, cb) {
   str += ' <' + data.severity + '> ' + data.message + '\n';
 
   cb(null, str);
-});
+};
 
 fallback.pipe(process.stdout);
 
