@@ -1,7 +1,7 @@
 {
   "name": "mag-fallback",
-  "version": "0.1.1",
-  "description": "mag fallback logger",
+  "version": "0.1.2",
+  "description": "Fallback stream for mag logger",
   "repository": {
     "type": "git",
     "url": "https://github.com/mahnunchik/mag-fallback.git"
@@ -26,12 +26,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "readable-stream": "^1.0.26"
+    "readable-stream": "^1.1.12"
   },
   "devDependencies": {
-    "chai": "^1.9.0",
-    "mocha": "^1.18.0",
-    "jshint": "^2.4.4",
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2",
+    "jshint": "^2.5.0",
     "mag-logger-facade": "^0.1.0"
   }
 }

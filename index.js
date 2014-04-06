@@ -13,7 +13,7 @@ fallback._transform = function(data, encoding, cb) {
       data.message = util.format.apply(this, data.arguments);
     } else {
       data.message = 'something wrong, arguments are not specified: ' +
-        JSON.stringify(data);
+        util.inspect(data);
     }
   }
 
