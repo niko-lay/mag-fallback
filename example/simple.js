@@ -6,4 +6,5 @@ var logger = new Logger(fallback, 'simple');
 
 logger.info('info message');
 logger.debug('debug');
+logger.warn('OMG!!!');
 logger.panic('err:', new Error('test panic'));
