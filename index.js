@@ -21,10 +21,10 @@ fallback._transform = function(data, encoding, cb) {
 
   if (!data.message){
     if (data.arguments) {
-      data.message = util.format.apply(this, data.arguments);
+      data.message = util.format.apply(this, data.arguments) + '\n';
     } else {
       data.message = 'something wrong, arguments are not specified: ' +
-        util.inspect(data);
+        util.inspect(data) + '\n';
     }
   }
 
@@ -35,7 +35,7 @@ fallback._transform = function(data, encoding, cb) {
     str += ' [' + data.namespace + ']';
   }
 
-  str += ' <' + severity + '> ' + data.message + '\n';
+  str += ' <' + severity + '> ' + data.message;
 
   cb(null, str);
 };
