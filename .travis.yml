@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - "0.11"
-  - "0.10"
+- '0.11'
+- '0.10'
+deploy:
+  provider: npm
+  email: mahnunchik@gmail.com
+  api_key:
+    secure: K/F3RbbaEETFumqCa7vCAJb859O+d0kfm8fjFNIdHUKjYsxmj8/96ppaUvVtF4kadSrrSDtuBBhIbWhQY6+49ETKMF5CbrBDNjNOTBiRksfNXDifaKkfTsm8guh3T1YThpcPFWvyMr5t6FDzMzjQmtkgGjQkQkzys99p9AR8pX4=
+  on:
+    tags: true
+    repo: mahnunchik/mag-fallback
