@@ -28,8 +28,7 @@ fallback._transform = function(data, encoding, cb) {
     }
   }
 
-  var str = data.timestamp.toLocaleTimeString() + '.' +
-    data.timestamp.getMilliseconds();
+  var str = data.timestamp.toISOString().split('T')[1].split('Z')[0];
 
   if (data.namespace) {
     str += ' [' + data.namespace + ']';
@@ -43,5 +42,4 @@ fallback._transform = function(data, encoding, cb) {
 fallback.pipe(process.stdout);
 
 module.exports = fallback;
-
 
