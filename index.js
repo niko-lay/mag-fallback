@@ -28,7 +28,7 @@ fallback._transform = function(data, encoding, cb) {
     }
   }
 
-  var str = data.timestamp.toISOString().split('T')[1].split('Z')[0];
+  var str = data.timestamp.toISOString().replace('T', ' ').replace('Z', '');
 
   if (data.namespace) {
     str += ' [' + data.namespace + ']';
